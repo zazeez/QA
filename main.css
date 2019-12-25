@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  cursor: pointer;
 }
 
 body {
@@ -13,6 +14,19 @@ body {
 
 p {
   font-weight: bold;
+}
+
+fieldset {
+  border: 0;
+}
+
+#have-you-mastered {
+  margin-top: 5%;
+  margin-bottom: 3%;
+}
+
+#start-button-section {
+  margin-top: 3%;
 }
 
 .header {
@@ -30,8 +44,29 @@ p {
   z-index: -100;
 }
 
+.question-score {
+  margin-bottom: 5%;
+}
+
+.question {
+  margin-bottom: 5%;
+}
+
+#question-form {
+  text-align: left;
+  display: flex;
+  justify-content: center;
+}
+
 #answer {
   margin-right: 7px;
+}
+
+#correct-answer-on-wrong {
+  margin-top: 7%;
+  margin-bottom: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .h1 {

@@ -65,24 +65,33 @@ let currentScore = 0;
 function showQuestion(q) {
   let html =
     `
-    <p>Question: ${currentQuestionNumber}/5
+    <section class="question-score">
+    <p>Question: ${currentQuestionNumber+1}/5
     <p>Score: ${currentScore}/5
-    <br/>
-    <br/>
+    </section>
+
+    <section class="question">
     <h1 class="h1">${q.question}</h1>
-    <br/>
+    </section>
+
     <form id='form'>
-      <ol class="list" type = 'A'>
-      <li><input type= 'radio' value='${q.answers[0]}'
-      name='option' id='answer'>${q.answers[0]}</input></li><br>
-      <li><input type= 'radio' value='${q.answers[1]}'
-      name='option' id='answer'>${q.answers[1]}</input></li><br>
-      <li><input type= 'radio' value='${q.answers[2]}'
-      name='option' id='answer'>${q.answers[2]}</input></li><br>
-      <li><input type= 'radio' value='${q.answers[3]}'
-      name='option' id='answer'>${q.answers[3]}</input></li><br>
-      </ol>
+      <fieldset>
+      <legend>
+        <section id="question-form">
+          <ol class="list" type = 'A'>
+            <li><input type= 'radio' value='${q.answers[0]}'
+            name='option' id='answer'>${q.answers[0]}</input></li><br>
+            <li><input type= 'radio' value='${q.answers[1]}'
+            name='option' id='answer'>${q.answers[1]}</input></li><br>
+            <li><input type= 'radio' value='${q.answers[2]}'
+            name='option' id='answer'>${q.answers[2]}</input></li><br>
+            <li><input type= 'radio' value='${q.answers[3]}'
+            name='option' id='answer'>${q.answers[3]}</input></li><br>
+          </ol>
+        </section>
+      </legend>
       <input type='submit' id='answer-submit' class='button'></input>
+      </fieldset>
     </form>
   `
 
@@ -116,9 +125,9 @@ let wrongAnswer = function() {
     `<div class = 'wrong-answer-screen'>
       <h1 class="h1">Not quite...</h1>
       <h3  class="h3">The correct answer is:</h3>
-      <br/>
+      <section id="correct-answer-on-wrong">
       <h1  class="h1">${q.correctAnswer}</h1>
-      <br/>
+      </section>
       <button class='button' id='nextQuestion'>Next Question</button>
       </div>`
       $('.questionBox').html('');
@@ -137,7 +146,7 @@ function userInput() {
 // Update the DOM to show the currentScore
 // Update the DOM to show the current question number
     if (!selected) {
-      alert('Please choose an optiton to proceed');
+      alert('Please choose an option to proceed');
     }
     else if
       (selected === rightAnswer) {
